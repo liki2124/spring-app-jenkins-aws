@@ -32,7 +32,7 @@ pipeline{
             )
             }
 }
-stage ('aritifactory') {
+stage ('aritifactory download') {
   steps {
           rtDownload (
                  serverId: "ARTIFACTORY_SERVER",
