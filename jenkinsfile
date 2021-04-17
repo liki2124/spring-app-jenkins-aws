@@ -2,17 +2,17 @@ pipeline{
  agent any;
  tools{
      maven 'maven'
-     jdk 'JDK11'
+     jdk 'JDK'
  }
   stages {
     stage('Maven-Clean'){
       steps{
-        bat 'mvn clean'
+        sh 'mvn clean'
       }
     }
     stage('Maven-Package'){
         steps{
-        bat 'mvn package -DskipTests'
+        sh 'mvn package -DskipTests'
         }
     }
    
@@ -60,9 +60,9 @@ stage ('aritifactory download') {
               //      bat 'scp -r C:/WINDOWS/system32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/challengeaws/artifacts/mindsapp/*.jar ubuntu@52.14.53.49:/home/ubuntu/artifacts/'
        //   }
 
-        /*  withAWS(region:'us-east-2',credentials:'70be04d1-2159-4bd2-bf81-ad29e92c201e') {
+          withAWS(region:'us-east-2',credentials:'70be04d1-2159-4bd2-bf81-ad29e92c201e') {
                     s3Upload(file:'artifacts/mindsapp/', bucket:'jenkinssujjadbucket', path:'artifacts/')
-          }*/
+          }
 
          
       }
