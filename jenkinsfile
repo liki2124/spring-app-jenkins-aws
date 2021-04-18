@@ -17,7 +17,7 @@ pipeline{
     }
    
   
-  stage ('aritifactory') {
+ /* stage ('aritifactory') {
   steps {
           rtUpload (
             serverId: 'ARTIFACTORY_SERVER',
@@ -47,6 +47,7 @@ stage ('aritifactory download') {
             )
             }
             }
+            
             stage('upload to ec2')
            {
               steps{
@@ -62,7 +63,7 @@ stage ('aritifactory download') {
 
           withAWS(region:'us-east-2',credentials:'70be04d1-2159-4bd2-bf81-ad29e92c201e') {
                     s3Upload(file:'artifacts/mindsapp/*.jar', bucket:'keerthibucket', path:'artifacts/')
-          }
+          }*/
 
          
       }
